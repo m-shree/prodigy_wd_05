@@ -1,0 +1,175 @@
+/* General Reset and Body Styling */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #dcdcdc 50%, #e9e9e9 50%);
+    font-family: 'Arial', sans-serif;
+    color: #edf0ee;
+}
+
+/* Reset Padding and Margin */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Ensures consistent padding/margin calculation */
+}
+
+/* Main Container Styling */
+main {
+    width: 90%;
+    max-width: 350px;
+    background-color: #140000;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease-in-out;
+}
+
+main:hover {
+    transform: scale(1.02); /* Subtle hover effect for the card */
+}
+
+/* Form Styling */
+main form {
+    display: flex;
+    border: 1px solid rgba(85, 85, 85, 0.2);
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #faf6f6;
+}
+
+main form input,
+main form button {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 12px 15px;
+    font-size: 1rem;
+}
+
+main form input::placeholder {
+    color: #aaa;
+}
+
+main form button {
+    flex-shrink: 0;
+    background-color: #f8f5f5;
+    color: #fff;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+main form button:hover {
+    background-color: #e5e7ea;
+}
+
+main form i {
+    opacity: 0.7;
+}
+
+/* Result Section */
+main .result {
+    padding-top: 20px;
+    text-align: center;
+}
+
+main .result .name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+main .temperature img {
+    width: 150px;
+    margin: 0 auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+}
+
+main .temperature figcaption {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #f4f7f4;
+}
+
+main .description {
+    margin: 15px 0;
+    font-size: 1rem;
+    color: #f4f7f4;
+}
+
+/* Statistics Section */
+main ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0;
+}
+
+main li {
+    background-color: #46052a;
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.03) 50%);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+main li:hover {
+    transform: translateY(-5px);
+}
+
+main ul li i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+main li:nth-child(2) {
+    background-color: #46052a;
+}
+
+main li:nth-child(3) {
+    background-color: #46052a;
+}
+
+/* Error Animation */
+main.error {
+    animation: errorEffect 0.3s linear 1;
+}
+
+@keyframes errorEffect {
+    0% {
+        transform: translate(10px, 5px);
+    }
+    25% {
+        transform: translate(-5px, 0);
+    }
+    50% {
+        transform: translate(8px, 2px);
+    }
+    75% {
+        transform: translate(-2px, 5px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
